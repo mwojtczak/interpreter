@@ -1,0 +1,15 @@
+function dec_to_zero(f, var x) {
+	print(x);
+	x--;
+	if (x > 0) {
+			f(f, x);
+	} else {
+		;
+	}
+}
+
+function main() {
+	i = 5;
+	dec_to_zero(dec_to_zero, i);
+	print(i);
+}

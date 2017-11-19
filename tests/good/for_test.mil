@@ -1,0 +1,6 @@
+function main () {
+	b = 10;
+	for (a = 3 to 6) {
+		print(a);
+	}
+}

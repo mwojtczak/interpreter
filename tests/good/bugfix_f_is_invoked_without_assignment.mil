@@ -1,0 +1,7 @@
+function test (val a) {
+	print(a);
+}
+
+function main() {
+	test(5);
+}

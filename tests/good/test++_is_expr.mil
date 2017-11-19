@@ -1,0 +1,19 @@
+function main () {
+	a = 4;
+	y = a++ + 1;
+	print(a);
+	print(y);
+	y = a-- - 1;
+	print(a);
+	print(y);
+
+	a = 10;
+	y = --a - 1;
+	print(a);
+	print(y);
+
+	a = 10;
+	y = ++a + 1;
+	print(a);
+	print(y);
+}

@@ -1,0 +1,28 @@
+function fun1(var a) {
+	print(a);
+	a = 10;
+	print(a);
+}
+
+function fun2(var b) {
+	print(b);
+	b = 11;
+	print(b);
+	fun1(b);
+	print(b);
+}
+
+function fun3(var c) {
+	print(c);
+	c = 12;
+	print(c);
+	fun2(c);
+	print(c);	
+}
+
+function main () {
+	a = 13;
+	print(a);
+	fun3(a);
+	print(a);
+}

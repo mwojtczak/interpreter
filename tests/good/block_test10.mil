@@ -1,0 +1,15 @@
+function main () {
+	x = 10;
+	print(x);
+	y = 42;
+	print(y);
+	{
+		
+		x = 5;
+		print(x);
+		y = 13;
+		print(y);
+	}
+	print(x);
+	print(y);
+}

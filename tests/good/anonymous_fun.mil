@@ -1,0 +1,41 @@
+function test (var a, func) {
+	print (func(a, 41));
+	return func(a, 42);
+}
+
+function main () {
+	a = 4;
+	i = 20;
+	j = 10;
+	print(test (a, function (var i, val j) {return(i + j);}));
+
+	apply = function (f, var x, val y){ 
+			return f(x, y);
+		};
+	exec_and_apply = function (p, f, var x, var y) {
+		p(x,y);
+		return(apply(f, x, y));
+	};
+	print(apply(function (val x, val y){return(x + y);}, i, j));
+	print(apply(function (val x, val y){return(x - y);}, i, j));
+	print(apply(function (val x, val y){return(x * y);}, i, j));
+	print(apply(function (val x, val y){return(x / y);}, i, j));
+	print(apply(function (val x, val y){return(x < y);}, i, j));
+	print(apply(function (val x, val y){return(x > y);}, i, j));
+	
+	print(apply(function (var x, var y) {
+			print(i);
+			i += 20;
+			print(i);
+			print(x);
+			return(x + y);
+		}, i, j))
+
+	print(exec_and_apply(function (var x, var y){
+			print(x);
+			print(y);
+			print(i);
+			i += 10;
+		}, function (var x, val y){return(x + y);}, i, j));
+	print(i); 
+}

@@ -1,0 +1,20 @@
+function factorial(val n) {
+	if (n <= 1) {
+		return 1;
+	} else {
+		return n * factorial(n - 1);
+	}
+}
+
+function fibb(val n) {
+	if (n <= 2) {
+		return 1;
+	} else {
+		return fibb(n - 1) + fibb(n - 2);
+	}
+}
+
+function main() {
+	print(factorial(5));
+	print(fibb(5));
+}

@@ -1,0 +1,27 @@
+function main () {
+	x = 10;
+	if (1 == 1) {
+		x = 1;
+	};
+	print(x);
+	x = 2;
+	if (10 == 1) {
+		x = 20;
+	};
+	print(x);
+
+	x = 30;
+	if (1 == 1) {
+		x = 3;
+	} else {
+		x = 33;
+	};
+	print(x);
+	x = 5;
+	if (10 == 1) {
+		x = 44;
+	} else {
+		x = 4;
+	};
+	print(x);
+}

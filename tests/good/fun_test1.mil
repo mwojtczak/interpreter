@@ -1,0 +1,15 @@
+function test(var a, val b) {
+	print(a);
+	a = 3;
+	b = 42;
+}
+
+function main () {
+	a = 1;
+	b = 1;
+	print(a);
+	c = test(a, b);
+	print(a);
+	print(b);
+	print(c);
+}

@@ -1,0 +1,53 @@
+//z leniwym wyliczaniem się warunków logicznych np (1 != 1) && ((1 / 0) == 2) się obliczy do false
+function main () {
+  x = true;
+  print(x);
+  y = 1 < 10;
+  print(y);
+  y = 1 >= 1;
+  print(y);
+  y = 1 <= 10;
+  print(y);
+  y = 1 <= 1;
+  print(y);
+  y = 1 == 1;
+  print(y);
+  y = 1 != 10;
+  print(y);
+  y = true == true;
+  print(y);
+  y = false == false;
+  print(y);
+  y = false != true;
+  print(y);
+  y = true != false;
+  print(y);
+  y = (1 == 1) || ((1 / 0) == 2);
+  print(y);
+  y = (1 == 1) && (2 == 2);
+  print(y);
+  y = (1 != 1) || (2 == 2);
+  print(y);
+  
+  y = (1 != 1) && ((1 / 0) == 2);
+  print(y);
+  x = true;
+  x = !x;
+  print(x);
+  y = 1 > 10;
+  print(y);
+  y = 1 >= 10;
+  print(y);
+  y = 1 != 1;
+  print(y);
+  y = 1 == 10;
+  print(y);
+  y = true == false;
+  print(y);
+  y = false == true;
+  print(y);
+  y = false != false;
+  print(y);
+  y = true != true;
+  print(y);
+}

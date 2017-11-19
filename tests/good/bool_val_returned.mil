@@ -1,0 +1,18 @@
+function is_positive(val i) {
+	if (i > 0) {
+		return(true);
+	} else {
+		return(false);
+	}
+}
+
+function main () {
+	x = 5;
+	print(x);
+	y = is_positive(x);
+	print(y);
+	x = -4;
+	print(x);
+	y = is_positive(x);
+	print(y);
+}

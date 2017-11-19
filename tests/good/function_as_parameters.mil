@@ -1,0 +1,28 @@
+function add(val a, val b) {
+	return a + b;	
+}
+
+function sub(val a, val b) {
+	return a - b;	
+}
+
+function mul(val a, val b) {
+	return a * b;	
+}
+
+function div(val a, val b) {
+	return a / b;	
+}
+
+function apply(f, val a, val b) {
+	return f(a, b);
+}
+
+function main() {
+	a = 10;
+	b = 2;
+	print(apply(add, a, b));
+	print(apply(sub, a, b));
+	print(apply(mul, a, b));
+	print(apply(div, a, b));
+}

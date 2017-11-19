@@ -1,0 +1,8 @@
+function a () {
+	print(42);
+}
+
+function main () {
+	a = 4;
+	test_func();
+}

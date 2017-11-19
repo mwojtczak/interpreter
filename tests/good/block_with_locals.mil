@@ -1,0 +1,47 @@
+function main () {
+	x = 5;
+	a = 1;
+	b = 2;
+	c = 3;
+	print(a);
+	print(b);
+	print(c);
+	[local x];
+	[local a];
+	[local b];
+	[local c];
+	{
+		a = 10;
+		b = 20;
+		c = 30;
+		print(a);
+		print(b);
+		print(c);
+		[local a];
+		[local b];
+		[local c];
+		{
+			a = 100;
+			b = 200;
+			c = 300;
+			print(a);
+			print(b);
+			print(c);
+//block without local decl			
+			{
+				a = 9;
+				b = 99;
+				c = 999;
+			}
+			print(a);
+			print(b);
+			print(c);
+		}
+		print(a);
+		print(b);
+		print(c);
+	}
+	print(a);
+	print(b);
+	print(c);
+}

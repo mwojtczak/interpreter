@@ -1,0 +1,143 @@
+-- inspirowane https://www.mimuw.edu.pl/~ben/Zajecia/Mrj2016/Latte/Latte.cf
+
+-- programs ------------------------------------------------
+
+entrypoints Program ;
+
+Program.   Program ::= [TopDef] ;
+
+FnDef.	   TopDef ::= "function" Ident "(" [Arg] ")" Block ;
+
+separator nonempty TopDef "" ;
+
+CallVal.   Arg ::= "val" Ident;
+
+CallVar.   Arg ::= "var" Ident;
+
+FunArg.    Arg ::= Ident ;
+
+separator  Arg "," ;
+
+DeclParam. Param ::= Expr ;
+
+AnonParam. Param ::= "function" "(" [Arg] ")" Block ;
+
+separator Param "," ;
+
+-- statements ----------------------------------------------
+
+DLocal.   Loc ::= "[" "local" Ident "]"  ;
+
+separator Loc ";" ;
+
+Block.     Block ::= "{" [Stmt] "}" ;
+
+separator  Stmt "" ;
+
+Empty.     Stmt ::= ";" ;
+
+BStmt.     Stmt ::=  [Loc]  Block ;
+
+Ass.       Stmt ::= Ident "=" Expr  ";" ;
+
+FAss.      Stmt ::= Ident "=" "function" "(" [Arg] ")" Block  ;
+
+AddExpr.   Stmt ::= Ident "+="  Expr";" ;
+
+SubExpr.   Stmt ::= Ident "-="  Expr";" ;
+
+MulExpr.   Stmt ::= Ident "*="  Expr";" ;
+
+DivExpr.   Stmt ::= Ident "/="  Expr";" ;
+
+Ret.       Stmt ::= "return" Expr ";" ;
+
+VRet.      Stmt ::= "return" ";" ;
+
+SPrint.    Stmt ::= "print" "(" Expr ")" ;
+
+FReturn.   Stmt ::= "return" "function" "(" [Arg] ")" Block  ;
+
+CondIf.    Stmt ::= "if" "(" Expr ")" Stmt ";" ;
+
+CondElse.  Stmt ::= "if" "(" Expr ")" Stmt "else" Stmt  ;
+
+While.     Stmt ::= "while" "(" Expr ")" Stmt ;
+
+For.      Stmt ::= "for" "(" Ident "=" Expr ForKind Expr ")" Stmt;
+
+SExp.      Stmt ::= Expr  ";" ;
+
+-- Expressions ---------------------------------------------
+
+EVar.      Expr6 ::= Ident ;
+
+ELitInt.   Expr6 ::= Integer ;
+
+ELitTrue.  Expr6 ::= "true" ;
+
+ELitFalse. Expr6 ::= "false" ;
+
+EIncr.     Expr6 ::= Ident "++"  ;
+
+EDecr.     Expr6 ::= Ident "--" ;
+
+EPreIncr.  Expr6 ::= "++" Ident   ;
+
+EPreDecr.  Expr6 ::= "--" Ident ;
+
+EApp.      Expr6 ::= Ident "(" [Param] ")" ;
+
+Neg.       Expr5 ::= "-" Expr6 ;
+
+Not.       Expr5 ::= "!" Expr6 ;
+
+EMul.      Expr4 ::= Expr4 MulOp Expr5 ;
+
+EAdd.      Expr3 ::= Expr3 AddOp Expr4 ;
+
+ERel.      Expr2 ::= Expr2 RelOp Expr3 ;
+
+EAnd.      Expr1 ::= Expr2 "&&" Expr1 ;
+
+EOr.       Expr ::= Expr1 "||" Expr ;
+
+coercions  Expr 6 ;
+
+-- For Kinds -----------------------------------------------
+
+To. ForKind ::= "to" ;
+
+Downto. ForKind ::= "downto" ;
+
+-- operators -----------------------------------------------
+
+Plus.      AddOp ::= "+" ;
+
+Minus.     AddOp ::= "-" ;
+
+Times.     MulOp ::= "*" ;
+
+Div.       MulOp ::= "/" ;
+
+Mod.       MulOp ::= "%" ;
+
+LTH.       RelOp ::= "<" ;
+
+LE.        RelOp ::= "<=" ;
+
+GTH.       RelOp ::= ">" ;
+
+GE.        RelOp ::= ">=" ;
+
+EQU.       RelOp ::= "==" ;
+
+NE.        RelOp ::= "!=" ;
+
+-- comments ------------------------------------------------
+
+comment    "#" ;
+
+comment    "//" ;
+
+comment    "/*" "*/" ;

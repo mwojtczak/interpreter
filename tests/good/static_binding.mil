@@ -1,0 +1,15 @@
+function main () {
+	i = 20;
+	dec = function (var x){
+		x = x - 1;
+		print(i);
+	}
+	[local i];
+	{
+		i = 5;
+		while (i > 0) {
+			dec(i);
+			print(i);
+		}
+	}
+}

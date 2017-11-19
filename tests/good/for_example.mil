@@ -1,0 +1,35 @@
+// zmienna po której iteruje się for jest w ciele fora lokalna, po wyjściu z fora ma poprzednią wartość
+function main () {
+	i = 40;
+	print(i);
+	for (i = 1 to 3) {
+		print(i)
+	};
+	print(i);
+	for (i = 1 to 1){ 
+		print(i)
+	};
+	print(i);
+	// 40 1 2 3 3 1 1
+	for (i = 1 to 0) {
+		print(i)
+	};
+	print(i);
+	//1
+	for (i = 3 downto 1) {
+		print(i)
+	};
+	print(i);
+	//3 2 1 1
+	for (i = 3 downto 4) {
+		print(i)
+	};
+	print(i);
+	//3
+	x = 6;
+	acc = 1;
+	for(i = 1 to x) {
+		acc *= i;
+		print (acc);
+	}
+}

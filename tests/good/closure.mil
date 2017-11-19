@@ -1,0 +1,22 @@
+// closure ma dostęp do zmiennych zadeklarownych w ciele funkcji w której jest zwracany 
+// (zmienna k)
+
+function ret_fun(val i, val j) {
+	k = 100;
+	return function(var a, var b) {
+		print(k);
+		temp = a + b;
+		a = 10;
+		b = 20;
+		return temp;
+	}
+}
+
+function main() {
+	a = 1;
+	b = 2;
+	f = ret_fun(a, b);
+	print(f(a, b));
+	print(a);
+	print(b);
+}
